@@ -27,12 +27,12 @@ class Ccnet < Formula
   depends_on 'pkg-config' => :build
   depends_on 'libtool' => :build
   depends_on 'intltool' => :build
+  depends_on 'vala' => :build
   depends_on 'glib'
   depends_on 'ossp-uuid'
   depends_on 'libsearpc'
   depends_on 'jansson'
   depends_on 'libzdb'
-  depends_on 'vala'
 
   def install
     system "./autogen.sh"
