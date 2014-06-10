@@ -4,7 +4,7 @@ class Libsearpc < Formula
   homepage "http://www.seafile.com/"
   stable do
     url "https://github.com/haiwen/libsearpc/archive/v3.0.5-pro.tar.gz"
-    version "v3.0.5-pro"
+    version "3.0.5-pro"
     sha1 "cc79c6fba507cb616e86266ec34d1a89d4f12283"
   end
   head do
