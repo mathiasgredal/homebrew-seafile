@@ -30,9 +30,18 @@ class Ccnet < Formula
   depends_on 'vala' => :build
   depends_on 'glib'
   depends_on 'ossp-uuid'
-  depends_on 'libsearpc'
   depends_on 'jansson'
+  depends_on 'gettext'
   depends_on 'libzdb'
+  depends_on 'libevent'
+  depends_on 'libsearpc'
+
+  if MacOS.version >= :mountain_lion
+    option 'with-openssl', 'Build with OpenSSL instead of Secure Transport'
+    depends_on 'openssl' => :optional
+  else
+    depends_on 'openssl'
+  end
 
   def install
     system "./autogen.sh"
