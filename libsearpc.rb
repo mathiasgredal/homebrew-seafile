@@ -37,6 +37,8 @@ class Libsearpc < Formula
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
+    system "python ./lib/searpc-codegen.py ./demo/rpc_table.py"
+    system "python ./lib/searpc-codegen.py ./tests/rpc_table.py"
     system "make"
     system "make", "install"
   end
