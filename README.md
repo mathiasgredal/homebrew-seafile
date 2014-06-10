@@ -7,5 +7,5 @@ Usage
 
 If the stable build broken, please try HEAD build
 
-1. ``brew instlal --HEAD libsearpc``
-1. ``brew instlal --HEAD ccnet``
+1. ``brew install --HEAD libsearpc``
+1. ``brew install --HEAD ccnet``
