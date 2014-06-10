@@ -35,6 +35,7 @@ class Ccnet < Formula
   depends_on 'libzdb'
   depends_on 'libevent'
   depends_on 'libsearpc'
+  depends_on 'sqlite' => :optional
 
   if MacOS.version >= :mountain_lion
     option 'with-openssl', 'Build with OpenSSL instead of Secure Transport'
