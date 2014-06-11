@@ -22,6 +22,11 @@ class Ccnet < Formula
     sha1 "af5a53ffb9fca0d4918b9d2ef1afd54959ecf186"
   end
 
+  option 'without-client', 'Disable building client'
+  option 'with-server', 'Build with server part'
+  option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
+  option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
+
   depends_on 'autoconf' => :build
   depends_on "automake" => :build
   depends_on 'pkg-config' => :build
@@ -35,14 +40,39 @@ class Ccnet < Formula
   depends_on 'libzdb'
   depends_on 'libevent'
   depends_on 'libsearpc'
-  depends_on 'sqlite' => :optional
+  depends_on 'sqlite' if build.with? 'brewed-sqlite'
 
   #Compatiblity issue with Apple's Secure Transport
-  depends_on 'openssl'
+  depends_on 'openssl' if build.with? 'brewed-openssl'
 
   def install
+
+    if build.with? 'server' and build.with? 'client'
+      raise <<-EOS.undent
+        Building ccnet with both client and server pieces
+        is not supported.  Please use '--with-server' together with
+        '--without-client'.
+      EOS
+    end
+
+    args = %W[
+      --prefix=#{prefix}
+    ]
+
+    if build.with? 'server'
+      args << '--enable-server'
+    else
+      args << '--disable-server'
+    end
+
+    if build.with? 'client'
+      args << '--enable-client'
+    else
+      args << '--disable-client'
+    end
+
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--disable-server", "--enable-client"
+    system "./configure", *args
     system "python `which searpc-codegen.py` ./lib/rpc_table.py"
     system "make"
     system "make", "install"
