@@ -2,11 +2,11 @@ require "formula"
 
 class Ccnet < Formula
   homepage "http://www.seafile.com/"
-  stable do
-    url "https://github.com/haiwen/ccnet/archive/v3.0.5-pro.tar.gz"
-    version "3.0.5-pro"
-    sha1 "9aa407a3d41a3340110f41c99f39ff9146b2ceaa"
-  end
+  #stable do
+  #  url "https://github.com/haiwen/ccnet/archive/v3.0.5-pro.tar.gz"
+  #  version "3.0.5-pro"
+  #  sha1 "9aa407a3d41a3340110f41c99f39ff9146b2ceaa"
+  #end
   head do
     url "https://github.com/haiwen/ccnet.git"
   end
