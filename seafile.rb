@@ -11,11 +11,6 @@ class Seafile < Formula
     url "https://github.com/haiwen/seafile.git"
   end
 
-  #Silence the annoying "subdir-objects disabled" warning
-  patch :p1 do
-    url "https://github.com/Chilledheart/seafile/commit/74319f19.diff"
-    sha1 "7741f84d3d52750c734e742360fa8a561e23f9ab"
-  end
   #Use uname command to detect Darwin platform
   patch :p1 do
     url "https://github.com/Chilledheart/seafile/commit/f37dad80.diff"
@@ -67,14 +62,6 @@ class Seafile < Formula
 
 
   def install
-
-    if build.with? 'server' and build.with? 'client'
-      raise <<-EOS.undent
-        Building seafile with both client and server pieces
-        is not supported.  Please use '--with-server' together with
-        '--without-client'.
-      EOS
-    end
 
     args = %W[
       --prefix=#{prefix}

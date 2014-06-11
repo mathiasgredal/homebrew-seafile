@@ -11,11 +11,6 @@ class Ccnet < Formula
     url "https://github.com/haiwen/ccnet.git"
   end
 
-  #Silence the annoying "subdir-objects disabled" warning
-  patch :p1 do
-    url "https://github.com/Chilledheart/ccnet/commit/4e290a5c.diff"
-    sha1 "f97591c4ef2d5baae5a4b2a10bdc31f6967face9"
-  end
   #[FIX] homebrew autotools path
   patch :p1 do
     url "https://github.com/Chilledheart/ccnet/commit/48610f08.diff"
@@ -46,14 +41,6 @@ class Ccnet < Formula
   depends_on 'openssl' if build.with? 'brewed-openssl'
 
   def install
-
-    if build.with? 'server' and build.with? 'client'
-      raise <<-EOS.undent
-        Building ccnet with both client and server pieces
-        is not supported.  Please use '--with-server' together with
-        '--without-client'.
-      EOS
-    end
 
     args = %W[
       --prefix=#{prefix}
