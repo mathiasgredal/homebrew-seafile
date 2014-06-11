@@ -44,6 +44,7 @@ class Seafile < Formula
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
   depends_on 'readline' => :optional
   depends_on 'libarchive' if build.with? 'server'
+  depends_on 'libevhtp' if build.with? 'server'
 
   #Compatiblity issue with Apple's Secure Transport
   depends_on 'openssl' if build.with? 'brewed-openssl'
