@@ -1,6 +1,7 @@
 Usage
 ===
 
+1. ``brew tap homebrew/dupes``
 1. ``brew tap Chilledheart/seafile``
 1. ``brew install libsearpc``
 1. ``brew install ccnet``
