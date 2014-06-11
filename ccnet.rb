@@ -37,12 +37,8 @@ class Ccnet < Formula
   depends_on 'libsearpc'
   depends_on 'sqlite' => :optional
 
-  if MacOS.version >= :mountain_lion
-    option 'with-openssl', 'Build with OpenSSL instead of Secure Transport'
-    depends_on 'openssl' => :optional
-  else
-    depends_on 'openssl'
-  end
+  #Compatiblity issue with Apple's Secure Transport
+  depends_on 'openssl'
 
   def install
     system "./autogen.sh"

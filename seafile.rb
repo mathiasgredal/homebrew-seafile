@@ -43,15 +43,12 @@ class Seafile < Formula
   depends_on 'libsearpc'
   depends_on 'ccnet'
   depends_on 'zlib'
-  depends_on 'libarchive' => :optional
   depends_on 'sqlite' => :optional
+  depends_on 'readline' => :optional
+  depends_on 'libarchive' => :optional
 
-  if MacOS.version >= :mountain_lion
-    option 'with-openssl', 'Build with OpenSSL instead of Secure Transport'
-    depends_on 'openssl' => :optional
-  else
-    depends_on 'openssl'
-  end
+  #Compatiblity issue with Apple's Secure Transport
+  depends_on 'openssl'
 
   def install
     system "./autogen.sh"
