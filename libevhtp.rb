@@ -1,7 +1,7 @@
 require "formula"
 
 class Libevhtp < Formula
-  homepage "http://www.seafile.com/"
+  homepage "https://github.com/ellzey/libevhtp"
   stable do
     url "https://github.com/ellzey/libevhtp/archive/1.2.9.tar.gz"
     sha1 "c4edfcfd1427db26e585ee7bc9bce7df4f10ec3d"
