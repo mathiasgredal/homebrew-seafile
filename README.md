@@ -13,3 +13,4 @@ If the stable build broken, please try HEAD build
 1. ``brew install --HEAD libsearpc``
 1. ``brew install --HEAD ccnet``
 1. ``brew install --HEAD seafile``
+1. ``brew install --HEAD seafile-client``
