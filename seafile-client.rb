@@ -12,6 +12,7 @@ class SeafileClient < Formula
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
 
   depends_on 'cmake' => :build
+  depends_on 'glib'
   depends_on 'jansson'
   depends_on 'qt4'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
