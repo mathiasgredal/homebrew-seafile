@@ -6,6 +6,7 @@ Usage
 1. ``brew install libsearpc``
 1. ``brew install ccnet``
 1. ``brew install seafile``
+1. ``brew install seafile-client``
 
 If the stable build broken, please try HEAD build
 
