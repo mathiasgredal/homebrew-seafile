@@ -1,4 +1,4 @@
-Usage
+Homebrew-seafile
 ===
 
 1. ``brew tap homebrew/dupes``
