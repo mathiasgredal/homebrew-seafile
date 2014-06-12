@@ -2,18 +2,18 @@ require "formula"
 
 class Ccnet < Formula
   homepage "http://www.seafile.com/"
+  url "https://github.com/haiwen/ccnet/archive/v3.0.5-pro.tar.gz"
+  version "3.0.5-pro"
+  sha1 "9aa407a3d41a3340110f41c99f39ff9146b2ceaa"
+
   stable do
-    url "https://github.com/haiwen/ccnet/archive/v3.0.5-pro.tar.gz"
-    version "3.0.5-pro"
-    sha1 "9aa407a3d41a3340110f41c99f39ff9146b2ceaa"
     patch :p1 do
       url "https://github.com/Chilledheart/ccnet/commit/a61f8e46.diff"
       sha1 "7a990ee051d5dcbab089fd8109cd8a2b36ac5cf9"
     end
   end
-  head do
-    url "https://github.com/haiwen/ccnet.git"
-  end
+
+  head "https://github.com/haiwen/ccnet.git"
 
   #[FIX] homebrew autotools path
   patch :p1 do
