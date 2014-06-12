@@ -2,14 +2,12 @@ require "formula"
 
 class Seafile < Formula
   homepage "http://www.seafile.com/"
-  stable do
-    url "https://github.com/haiwen/seafile/archive/v3.0.4.tar.gz"
-    version "3.0.4"
-    sha1 "fefddcd96a1905ebd8069314fa4580a8c9064e51"
-  end
-  head do
-    url "https://github.com/haiwen/seafile.git"
-  end
+  url "https://github.com/haiwen/seafile/archive/v3.0.4-server.tar.gz"
+  sha1 "a0a91b2e42e1a17a3b9c83bb3c9a3b96235292b4"
+  version "3.0.4"
+  revision 2
+
+  head "https://github.com/haiwen/seafile.git"
 
   #Use uname command to detect Darwin platform
   patch :p1 do
