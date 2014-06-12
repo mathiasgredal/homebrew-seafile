@@ -19,6 +19,11 @@ class Seafile < Formula
     url "https://github.com/Chilledheart/seafile/commit/5848eb75.diff"
     sha1 "b8b0d17ae03474e996ce7e2a42aefe0edb80d159"
   end
+  #[FIX] Add -liconv for homebrew build
+  patch :p1 do
+    url "https://github.com/Chilledheart/seafile/commit/792f55c5.diff"
+    sha1 "9228f124342b7c2e86801b8b33c60cf3a3bab827"
+  end
 
   option 'without-client', 'Disable building client'
   option 'with-server', 'Build with server part'
