@@ -2,11 +2,11 @@ require "formula"
 
 class Seafile < Formula
   homepage "http://www.seafile.com/"
-  #stable do
-  #  url "https://github.com/haiwen/seafile/archive/v3.0.4.tar.gz"
-  #  version "3.0.4"
-  #  sha1 "fefddcd96a1905ebd8069314fa4580a8c9064e51"
-  #end
+  stable do
+    url "https://github.com/haiwen/seafile/archive/v3.0.4.tar.gz"
+    version "3.0.4"
+    sha1 "fefddcd96a1905ebd8069314fa4580a8c9064e51"
+  end
   head do
     url "https://github.com/haiwen/seafile.git"
   end
