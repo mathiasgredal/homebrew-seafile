@@ -14,7 +14,7 @@ class Libevhtp < Formula
   depends_on 'openssl' if build.with? 'brewed-openssl'
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", "-DEVHTP_BUILD_SHARED=on", *std_cmake_args
     system "make"
     system "make", "install"
   end
