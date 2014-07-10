@@ -2,9 +2,9 @@ require "formula"
 
 class Libsearpc < Formula
   homepage "http://www.seafile.com/"
-  url "https://github.com/haiwen/libsearpc/archive/v3.0.5-pro.tar.gz"
-  version "3.0.5-pro"
-  sha1 "cc79c6fba507cb616e86266ec34d1a89d4f12283"
+  url "https://github.com/haiwen/libsearpc/archive/v3.0.7-pro.tar.gz"
+  version "3.0.7-pro"
+  sha1 "f3cca954bfc0aa7febf626c43def8dd3c897ca5d"
 
   head "https://github.com/haiwen/libsearpc.git"
 
