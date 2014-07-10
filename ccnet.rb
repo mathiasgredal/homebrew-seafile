@@ -6,13 +6,6 @@ class Ccnet < Formula
   version "3.0.7-pro"
   sha1 "66337b26b0353d97dcc2febc7602b81b7346e8ce"
 
-  stable do
-    patch :p1 do
-      url "https://github.com/Chilledheart/ccnet/commit/a61f8e46.diff"
-      sha1 "7a990ee051d5dcbab089fd8109cd8a2b36ac5cf9"
-    end
-  end
-
   head "https://github.com/haiwen/ccnet.git"
 
   #[FIX] homebrew autotools path
