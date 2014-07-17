@@ -25,12 +25,12 @@ class SeafileClient < Formula
   #Compatiblity issue with Apple's Secure Transport
   depends_on 'openssl' if build.with? 'brewed-openssl'
 
-  cmake_args = std_cmake_args
-  if build.with? 'xcode'
-    cmake_args << '-DCMAKE_CXX_FLAGS="-DXCODE_APP"'
-  end
-
   def install
+
+    cmake_args = std_cmake_args
+    if build.with? 'xcode'
+      cmake_args << '-DCMAKE_CXX_FLAGS="-DXCODE_APP"'
+    end
     system "cmake", ".", *cmake_args
     system "make"
     system "make", "install"
