@@ -6,7 +6,14 @@ class SeafileClient < Formula
   sha1 "6e143d8d86e78b4e1b054bf697a915bf567cfc41"
   version "3.0.4"
 
-  head "https://github.com/haiwen/seafile-client.git"
+  head do
+    url "https://github.com/haiwen/seafile-client.git"
+
+    patch :p1 do
+      url "https://github.com/Chilledheart/seafile/commit/0fc2d2c.diff"
+      sha1 "d205cbd6783332a212c5ae92d73c77178c2d2f28"
+    end
+  end
 
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
