@@ -13,6 +13,14 @@ class SeafileClient < Formula
       url "https://github.com/Chilledheart/seafile/commit/0fc2d2c.diff"
       sha1 "d205cbd6783332a212c5ae92d73c77178c2d2f28"
     end
+
+    if MacOS.version <= :snow_leopard
+      patch :p1 do
+        url "https://github.com/Chilledheart/seafile/commit/5916e74.diff"
+        sha1 "d205cbd6783332a212c5ae92d73c77178c2d2f28"
+      end
+    end
+
   end
 
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
