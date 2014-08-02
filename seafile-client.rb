@@ -10,14 +10,14 @@ class SeafileClient < Formula
     url "https://github.com/haiwen/seafile-client.git"
 
     patch :p1 do
-      url "https://github.com/Chilledheart/seafile/commit/0fc2d2c.diff"
-      sha1 "d205cbd6783332a212c5ae92d73c77178c2d2f28"
+      url "https://github.com/Chilledheart/seafile-client/commit/0fc2d2c.diff"
+      sha1 "1a995b289498da64b985f8cb42d0f08521f238cd"
     end
 
     if MacOS.version <= :snow_leopard
       patch :p1 do
-        url "https://github.com/Chilledheart/seafile/commit/5916e74.diff"
-        sha1 "d205cbd6783332a212c5ae92d73c77178c2d2f28"
+        url "https://github.com/Chilledheart/seafile-client/commit/6ea9536.diff"
+        sha1 "128a0bb383050b595a0148e0ff0f3d821686fbd4"
       end
     end
 
