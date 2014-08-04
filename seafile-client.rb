@@ -2,25 +2,21 @@ require "formula"
 
 class SeafileClient < Formula
   homepage "http://www.seafile.com/"
-  url "https://github.com/haiwen/seafile-client/archive/v3.0.4-mac.tar.gz"
-  sha1 "6e143d8d86e78b4e1b054bf697a915bf567cfc41"
-  version "3.0.4"
+  url "https://github.com/haiwen/seafile-client/archive/v3.1.2-testing.tar.gz"
+  sha1 "988dcf903232dfb535713f63b02c052fb0a8ea3d"
+  version "3.1.2"
+  revision 1
 
-  head do
-    url "https://github.com/haiwen/seafile-client.git"
+  head "https://github.com/haiwen/seafile-client.git"
 
-    patch :p1 do
-      url "https://github.com/Chilledheart/seafile-client/commit/0fc2d2c.diff"
-      sha1 "1a995b289498da64b985f8cb42d0f08521f238cd"
-    end
+  patch :p1 do
+    url "https://github.com/Chilledheart/seafile-client/commit/0fc2d2c.diff"
+    sha1 "1a995b289498da64b985f8cb42d0f08521f238cd"
+  end
 
-    if MacOS.version <= :snow_leopard
-      patch :p1 do
-        url "https://github.com/Chilledheart/seafile-client/commit/6ea9536.diff"
-        sha1 "128a0bb383050b595a0148e0ff0f3d821686fbd4"
-      end
-    end
-
+  patch :p1 do
+    url "https://github.com/Chilledheart/seafile-client/commit/6ea9536.diff"
+    sha1 "128a0bb383050b595a0148e0ff0f3d821686fbd4"
   end
 
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
