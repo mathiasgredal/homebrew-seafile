@@ -21,8 +21,8 @@ class SeafileClient < Formula
 
   if MacOS.version <= :snow_leopard
     patch :p1 do
-      url "https://github.com/Chilledheart/seafile-client/commit/2969705.diff"
-      sha1 "bbd89a5f002df8c629b76e5ae25f1466564811ba"
+      url "https://github.com/Chilledheart/seafile-client/commit/b92d2d6.diff"
+      sha1 "0ec7b0a3341f7ade570719f98d5f3979f1b8729d"
     end
   end
 
