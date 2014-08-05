@@ -30,8 +30,8 @@ class SeafileClient < Formula
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
 
   depends_on 'libsearpc'
-  depends_on 'ccnet' => 'with-client'
-  depends_on 'seafile' => 'with-client'
+  depends_on 'ccnet'
+  depends_on 'seafile'
 
   #Compatiblity issue with Apple's Secure Transport
   depends_on 'openssl' if build.with? 'brewed-openssl'

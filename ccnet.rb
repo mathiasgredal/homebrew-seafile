@@ -14,8 +14,6 @@ class Ccnet < Formula
     sha1 "af5a53ffb9fca0d4918b9d2ef1afd54959ecf186"
   end
 
-  option 'without-client', 'Disable building client'
-  option 'with-server', 'Build with server part'
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
 
@@ -41,19 +39,9 @@ class Ccnet < Formula
 
     args = %W[
       --prefix=#{prefix}
+      --enable-client
+      --disable-server
     ]
-
-    if build.with? 'server'
-      args << '--enable-server'
-    else
-      args << '--disable-server'
-    end
-
-    if build.with? 'client'
-      args << '--enable-client'
-    else
-      args << '--disable-client'
-    end
 
     system "./autogen.sh"
     system "./configure", *args

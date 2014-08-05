@@ -28,8 +28,6 @@ class Seafile < Formula
     sha1 "b8b0d17ae03474e996ce7e2a42aefe0edb80d159"
   end
 
-  option 'without-client', 'Disable building client'
-  option 'with-server', 'Build with server part'
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
 
@@ -49,46 +47,25 @@ class Seafile < Formula
   depends_on 'zlib'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
   depends_on 'readline' => :optional
-  depends_on 'libarchive' if build.with? 'server'
 
   #Compatiblity issue with Apple's Secure Transport
   depends_on 'openssl' if build.with? 'brewed-openssl'
 
-  if build.with? 'server'
-    depends_on 'ccnet' => 'with-server'
-    if build.with? 'brewed-openssl'
-      depends_on 'libevhtp' => 'with-brewed-openssl'
-    else
-      depends_on 'libevhtp' => 'without-brewed-openssl'
-    end
+  if build.with? 'brewed-openssl'
+    depends_on 'libevhtp' => 'with-brewed-openssl'
   else
-    depends_on 'ccnet'
+    depends_on 'libevhtp' => 'without-brewed-openssl'
   end
 
-  if build.with? 'client'
-    depends_on 'ccnet' => 'with-client'
-  else
-    depends_on 'ccnet'
-  end
-
+  depends_on 'ccnet'
 
   def install
 
     args = %W[
       --prefix=#{prefix}
+      --enable-client
+      --disable-server
     ]
-
-    if build.with? 'server'
-      args << '--enable-server'
-    else
-      args << '--disable-server'
-    end
-
-    if build.with? 'client'
-      args << '--enable-client'
-    else
-      args << '--disable-client'
-    end
 
     system "./autogen.sh"
     system "./configure", *args
