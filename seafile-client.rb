@@ -19,6 +19,13 @@ class SeafileClient < Formula
     sha1 "128a0bb383050b595a0148e0ff0f3d821686fbd4"
   end
 
+  if MacOS.version <= :snow_leopard
+    patch :p1 do
+      url "https://github.com/Chilledheart/seafile-client/commit/2969705.diff"
+      sha1 "bbd89a5f002df8c629b76e5ae25f1466564811ba"
+    end
+  end
+
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
   option "with-xcode", "Build with XCODE_APP Flags"
@@ -41,9 +48,6 @@ class SeafileClient < Formula
     cmake_args = std_cmake_args
     if build.with? 'xcode'
       cmake_args << '-DCMAKE_CXX_FLAGS="-DXCODE_APP"'
-    end
-    if MacOS.version <= :snow_leopard
-      cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.6"
     end
     system "cmake", ".", *cmake_args
     system "make"
