@@ -18,7 +18,6 @@ class SeafileClient < Formula
     url "https://github.com/Chilledheart/seafile-client/commit/6ea9536.diff"
     sha1 "128a0bb383050b595a0148e0ff0f3d821686fbd4"
   end
-CMAKE_OSX_DEPLOYMENT_TARGET
 
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
