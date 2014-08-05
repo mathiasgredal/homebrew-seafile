@@ -43,7 +43,6 @@ class Seafile < Formula
   depends_on 'gettext'
   depends_on 'libzdb'
   depends_on 'libevent'
-  depends_on 'libsearpc'
   depends_on 'zlib'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
   depends_on 'readline' => :optional
@@ -51,12 +50,7 @@ class Seafile < Formula
   #Compatiblity issue with Apple's Secure Transport
   depends_on 'openssl' if build.with? 'brewed-openssl'
 
-  if build.with? 'brewed-openssl'
-    depends_on 'libevhtp' => 'with-brewed-openssl'
-  else
-    depends_on 'libevhtp' => 'without-brewed-openssl'
-  end
-
+  depends_on 'libsearpc'
   depends_on 'ccnet'
 
   def install
