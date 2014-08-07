@@ -24,6 +24,7 @@ class Ccnet < Formula
   depends_on 'intltool' => :build
   depends_on 'vala' => :build
   depends_on 'glib'
+  depends_on 'ossp-uuid'
   depends_on 'jansson'
   depends_on 'gettext'
   depends_on 'libzdb'
