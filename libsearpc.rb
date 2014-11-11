@@ -10,8 +10,8 @@ class Libsearpc < Formula
 
   #FIX for homebrew autotools path
   patch :p1 do
-    url "https://github.com/Chilledheart/libsearpc/commit/70d44f.diff"
-    sha1 "ac4c411d9793ba88f1cd66975c19635d3fab36ef"
+    url "https://github.com/Chilledheart/libsearpc/commit/7df8246d.diff"
+    sha1 "981027078d9b1eb6b7c5b5a917fbb2d6fa39e029"
   end
 
   depends_on 'autoconf' => :build
