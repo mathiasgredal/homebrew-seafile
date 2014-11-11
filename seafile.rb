@@ -36,7 +36,13 @@ class Seafile < Formula
   depends_on 'libzdb'
   depends_on 'libevent'
   depends_on 'zlib'
-  depends_on 'curl' => 'openssl'
+
+  if MacOS.version >= :mountain_lion
+    depends_on 'curl' => 'openssl'
+  else
+    depends_on 'curl'
+  end
+
   depends_on 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
   depends_on 'readline' => :optional
