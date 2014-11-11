@@ -59,6 +59,7 @@ class Seafile < Formula
       --prefix=#{prefix}
       --enable-client
       --disable-server
+      --disable-fuse
     ]
 
     system "./autogen.sh"
