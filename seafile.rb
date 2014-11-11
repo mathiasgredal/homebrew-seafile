@@ -39,12 +39,12 @@ class Seafile < Formula
   depends_on 'intltool' => :build
   depends_on 'vala' => :build
   depends_on 'glib'
-  depends_on 'ossp-uuid'
   depends_on 'jansson'
   depends_on 'gettext'
   depends_on 'libzdb'
   depends_on 'libevent'
   depends_on 'zlib'
+  depends_on 'curl' => 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
   depends_on 'readline' => :optional
 
@@ -64,7 +64,6 @@ class Seafile < Formula
 
     system "./autogen.sh"
     system "./configure", *args
-    system "python `which searpc-codegen.py` ./lib/rpc_table.py"
     system "make"
     system "make", "install"
   end
