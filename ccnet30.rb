@@ -43,6 +43,7 @@ class Ccnet30 < Formula
       --disable-server
     ]
 
+    ENV.j1
     system "./autogen.sh"
     system "./configure", *args
     system "python `which searpc-codegen.py` ./lib/rpc_table.py"

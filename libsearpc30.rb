@@ -33,6 +33,7 @@ class Libsearpc30 < Formula
   depends_on 'glib'
 
   def install
+    ENV.j1
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "python ./lib/searpc-codegen.py ./demo/rpc_table.py"
