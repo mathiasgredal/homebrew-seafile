@@ -2,9 +2,9 @@ require "formula"
 
 class Libsearpc < Formula
   homepage "http://www.seafile.com/"
-  url "https://github.com/haiwen/libsearpc/archive/v3.0.7-pro.tar.gz"
-  version "3.0.7-pro"
-  sha1 "f3cca954bfc0aa7febf626c43def8dd3c897ca5d"
+  url "https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz"
+  version "4.0.0"
+  sha1 "cdff106886441205f46a592100ae324314127107"
 
   head "https://github.com/haiwen/libsearpc.git"
 
@@ -35,8 +35,6 @@ class Libsearpc < Formula
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
-    system "python ./lib/searpc-codegen.py ./demo/rpc_table.py"
-    system "python ./lib/searpc-codegen.py ./tests/rpc_table.py"
     system "make"
     system "make", "install"
   end
