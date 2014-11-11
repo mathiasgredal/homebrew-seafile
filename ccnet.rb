@@ -2,9 +2,9 @@ require "formula"
 
 class Ccnet < Formula
   homepage "http://www.seafile.com/"
-  url "https://github.com/haiwen/ccnet/archive/v3.0.7-pro.tar.gz"
-  version "3.0.7-pro"
-  sha1 "66337b26b0353d97dcc2febc7602b81b7346e8ce"
+  url "https://github.com/haiwen/ccnet/archive/v4.0.0.tar.gz"
+  version "4.0.0"
+  sha1 "c4a637becc4f84ed51eefe9a83a170f93445a1ea"
 
   head "https://github.com/haiwen/ccnet.git"
 
@@ -45,7 +45,6 @@ class Ccnet < Formula
 
     system "./autogen.sh"
     system "./configure", *args
-    system "python `which searpc-codegen.py` ./lib/rpc_table.py"
     system "make"
     system "make", "install"
   end
