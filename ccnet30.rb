@@ -3,7 +3,7 @@ require "formula"
 class Ccnet30 < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/ccnet/archive/v3.0.7-pro.tar.gz"
-  version "3.0.7-pro"
+  version "3.0.7"
   sha1 "66337b26b0353d97dcc2febc7602b81b7346e8ce"
 
   head "https://github.com/haiwen/ccnet.git"

@@ -3,7 +3,7 @@ require "formula"
 class Libsearpc30 < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/libsearpc/archive/v3.0.7-pro.tar.gz"
-  version "3.0.7-pro"
+  version "3.0.7"
   sha1 "f3cca954bfc0aa7febf626c43def8dd3c897ca5d"
 
   head "https://github.com/haiwen/libsearpc.git"
