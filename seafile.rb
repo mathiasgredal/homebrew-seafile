@@ -8,14 +8,6 @@ class Seafile < Formula
 
   head "https://github.com/haiwen/seafile.git"
 
-  stable do
-    #Use uname command to detect Darwin platform
-    patch :p1 do
-      url "https://github.com/Chilledheart/seafile/commit/f37dad80.diff"
-      sha1 "32c21eae697bf73e31efaaf9805f907d89838aab"
-    end
-  end
-
   #[FIX] fix openssl build
   patch :p1 do
     url "https://github.com/Chilledheart/seafile/commit/79fc942d.diff"
