@@ -3,7 +3,6 @@ Homebrew-seafile 4.0
 supports osx 10.7 and later
 ---
 
-1. ``brew tap homebrew/dupes``
 1. ``brew tap Chilledheart/seafile``
 1. ``brew install seafile-client``
 
@@ -12,7 +11,6 @@ Homebrew-seafile 3.0
 last version supports osx 10.6
 ---
 
-1. ``brew tap homebrew/dupes``
 1. ``brew tap Chilledheart/seafile``
 1. ``brew install seafile-client30``
 

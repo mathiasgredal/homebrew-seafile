@@ -20,6 +20,12 @@ class Seafile < Formula
     sha1 "b8b0d17ae03474e996ce7e2a42aefe0edb80d159"
   end
 
+  #[FIX] use system zlib
+  patch :p1 do
+    url "https://github.com/Chilledheart/seafile/commit/239c148b.diff"
+    sha1 "da429338d1726b95e26b70f7a9ce1bfa3a7392ae"
+  end
+
   depends_on MinimumMacOSRequirement => :lion
 
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
@@ -35,7 +41,6 @@ class Seafile < Formula
   depends_on 'gettext'
   depends_on 'libzdb'
   depends_on 'libevent'
-  depends_on 'zlib'
 
   if MacOS.version >= :mountain_lion
     depends_on 'curl' => 'openssl'
@@ -50,7 +55,6 @@ class Seafile < Formula
   depends_on 'ccnet'
 
   def install
-
     args = %W[
       --prefix=#{prefix}
       --enable-client

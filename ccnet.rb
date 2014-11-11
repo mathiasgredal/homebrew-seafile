@@ -37,10 +37,7 @@ class Ccnet < Formula
   depends_on 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
 
-  #Compatiblity issue with Apple's Secure Transport
-
   def install
-
     args = %W[
       --prefix=#{prefix}
       --enable-client
