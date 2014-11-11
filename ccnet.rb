@@ -14,7 +14,12 @@ class Ccnet < Formula
     sha1 "af5a53ffb9fca0d4918b9d2ef1afd54959ecf186"
   end
 
-  option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
+  #[FIX] openssl build
+  patch :p1 do
+    url "https://github.com/Chilledheart/ccnet/commit/4bede362.diff"
+    sha1 "e6c540344dfa4d4650cf3e370f2421d897319ab6"
+  end
+
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
 
   depends_on 'autoconf' => :build
@@ -29,10 +34,10 @@ class Ccnet < Formula
   depends_on 'libzdb'
   depends_on 'libevent'
   depends_on 'libsearpc'
+  depends_on 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
 
   #Compatiblity issue with Apple's Secure Transport
-  depends_on 'openssl' if build.with? 'brewed-openssl'
 
   def install
 

@@ -10,7 +10,6 @@ class SeafileClient < Formula
 
   depends_on MinimumMacOSRequirement => :lion
 
-  option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
   option "with-xcode", "Build with XCODE_APP Flags"
 
@@ -18,14 +17,12 @@ class SeafileClient < Formula
   depends_on 'glib'
   depends_on 'jansson'
   depends_on 'qt4'
+  depends_on 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
 
   depends_on 'libsearpc'
   depends_on 'ccnet'
   depends_on 'seafile'
-
-  #Compatiblity issue with Apple's Secure Transport
-  depends_on 'openssl' if build.with? 'brewed-openssl'
 
   def install
 

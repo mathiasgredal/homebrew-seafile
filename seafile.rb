@@ -14,13 +14,14 @@ class Seafile < Formula
       url "https://github.com/Chilledheart/seafile/commit/f37dad80.diff"
       sha1 "32c21eae697bf73e31efaaf9805f907d89838aab"
     end
-
-    #[FIX] Add -liconv for homebrew build
-    patch :p1 do
-      url "https://github.com/Chilledheart/seafile/commit/792f55c5.diff"
-      sha1 "9228f124342b7c2e86801b8b33c60cf3a3bab827"
-    end
   end
+
+  #[FIX] fix openssl build
+  patch :p1 do
+    url "https://github.com/Chilledheart/seafile/commit/79fc942d.diff"
+    sha1 "a4c81dbf6e131502b2c229b9cab2f324e8c51e5d"
+  end
+
   #[FIX] homebrew autotools path
   patch :p1 do
     url "https://github.com/Chilledheart/seafile/commit/5848eb75.diff"
@@ -29,7 +30,6 @@ class Seafile < Formula
 
   depends_on MinimumMacOSRequirement => :lion
 
-  option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
 
   depends_on 'autoconf' => :build
@@ -45,6 +45,7 @@ class Seafile < Formula
   depends_on 'libevent'
   depends_on 'zlib'
   depends_on 'curl' => 'openssl'
+  depends_on 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
   depends_on 'readline' => :optional
 
