@@ -4,6 +4,7 @@ class Ccnet < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/ccnet/archive/v4.0.0.tar.gz"
   version "4.0.0"
+  revision 1
   sha1 "c4a637becc4f84ed51eefe9a83a170f93445a1ea"
 
   head "https://github.com/haiwen/ccnet.git"

@@ -5,6 +5,7 @@ class SeafileClient < Formula
   url "https://github.com/haiwen/seafile-client/archive/v4.0.0.tar.gz"
   sha1 "3e72fbefa80fd41b4393c0c70fbeda5ba1a80388"
   version "4.0.0"
+  revision 1
 
   head "https://github.com/haiwen/seafile-client.git"
 
