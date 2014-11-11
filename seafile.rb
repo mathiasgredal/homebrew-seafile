@@ -2,10 +2,9 @@ require "formula"
 
 class Seafile < Formula
   homepage "http://www.seafile.com/"
-  url "https://github.com/haiwen/seafile/archive/v3.0.4-server.tar.gz"
-  sha1 "a0a91b2e42e1a17a3b9c83bb3c9a3b96235292b4"
-  version "3.0.4"
-  revision 2
+  url "https://github.com/haiwen/seafile/archive/v4.0.0.tar.gz"
+  sha1 "83d5ca29dd5e8465e6d0ecfbfd5b5145925bb11d"
+  version "4.0.0"
 
   head "https://github.com/haiwen/seafile.git"
 
@@ -27,6 +26,8 @@ class Seafile < Formula
     url "https://github.com/Chilledheart/seafile/commit/5848eb75.diff"
     sha1 "b8b0d17ae03474e996ce7e2a42aefe0edb80d159"
   end
+
+  depends_on MinimumMacOSRequirement => :lion
 
   option 'without-brewed-openssl', "Build without Homebrew OpenSSL"
   option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
