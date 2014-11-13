@@ -10,10 +10,7 @@ class Libsearpc < Formula
   head "https://github.com/haiwen/libsearpc.git"
 
   #FIX for homebrew autotools path
-  patch :p1 do
-    url "https://github.com/Chilledheart/libsearpc/commit/7df8246d.diff"
-    sha1 "981027078d9b1eb6b7c5b5a917fbb2d6fa39e029"
-  end
+  patch :DATA
 
   depends_on 'autoconf' => :build
   depends_on "automake" => :build
@@ -30,3 +27,18 @@ class Libsearpc < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff --git a/autogen.sh b/autogen.sh
+index b6a7d24..af0d8d7 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -60,7 +60,7 @@ fi
+ if test x"$MSYSTEM" = x"MINGW32"; then
+     autoreconf --install -I/local/share/aclocal
+ elif test "$(uname -s)" = "Darwin"; then
+-    autoreconf --install -I/opt/local/share/aclocal
++    autoreconf --install -I/usr/local/share/aclocal
+ else
+     autoreconf --install
+ fi
