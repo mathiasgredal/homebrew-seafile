@@ -29,7 +29,6 @@ class Libsearpc30 < Formula
   depends_on 'pkg-config' => :build
   depends_on 'libtool' => :build
   depends_on 'jansson'
-  depends_on 'gettext'
   depends_on 'glib'
 
   def install

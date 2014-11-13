@@ -27,16 +27,14 @@ class Ccnet < Formula
   depends_on "automake" => :build
   depends_on 'pkg-config' => :build
   depends_on 'libtool' => :build
-  depends_on 'intltool' => :build
   depends_on 'vala' => :build
   depends_on 'glib'
   depends_on 'jansson'
-  depends_on 'gettext'
   depends_on 'libzdb'
   depends_on 'libevent'
-  depends_on 'libsearpc'
   depends_on 'openssl'
   depends_on 'sqlite' if build.with? 'brewed-sqlite'
+  depends_on 'libsearpc'
 
   def install
     args = %W[
