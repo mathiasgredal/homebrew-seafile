@@ -12,12 +12,12 @@ class Libsearpc < Formula
   #FIX for homebrew autotools path
   patch :DATA
 
-  depends_on 'autoconf' => :build
+  depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on 'pkg-config' => :build
-  depends_on 'libtool' => :build
-  depends_on 'jansson'
-  depends_on 'glib'
+  depends_on "pkg-config" => :build
+  depends_on "libtool" => :build
+  depends_on "jansson"
+  depends_on "glib"
 
   def install
     system "./autogen.sh"

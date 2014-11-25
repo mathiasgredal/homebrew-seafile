@@ -29,28 +29,28 @@ class Seafile < Formula
 
   depends_on MinimumMacOSRequirement => :lion
 
-  option 'with-brewed-sqlite', 'Build with Homebrew sqlite3'
+  option "with-brewed-sqlite", "Build with Homebrew sqlite3"
 
-  depends_on 'autoconf' => :build
+  depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on 'pkg-config' => :build
-  depends_on 'libtool' => :build
-  depends_on 'vala' => :build
-  depends_on 'glib'
-  depends_on 'jansson'
-  depends_on 'libzdb'
-  depends_on 'libevent'
-  depends_on 'openssl'
-  depends_on 'sqlite' if build.with? 'brewed-sqlite'
+  depends_on "pkg-config" => :build
+  depends_on "libtool" => :build
+  depends_on "vala" => :build
+  depends_on "glib"
+  depends_on "jansson"
+  depends_on "libzdb"
+  depends_on "libevent"
+  depends_on "openssl"
+  depends_on "sqlite" if build.with? "brewed-sqlite"
 
   if MacOS.version >= :mountain_lion
-    depends_on 'curl' => 'openssl'
+    depends_on "curl" => "openssl"
   else
-    depends_on 'curl'
+    depends_on "curl"
   end
 
-  depends_on 'libsearpc'
-  depends_on 'ccnet'
+  depends_on "libsearpc"
+  depends_on "ccnet"
 
   def install
     args = %W[
