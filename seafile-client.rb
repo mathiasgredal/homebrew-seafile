@@ -2,10 +2,9 @@ require "formula"
 
 class SeafileClient < Formula
   homepage "http://www.seafile.com/"
-  url "https://github.com/haiwen/seafile-client/archive/v4.0.0.tar.gz"
-  sha1 "3e72fbefa80fd41b4393c0c70fbeda5ba1a80388"
-  version "4.0.0"
-  revision 1
+  url "https://github.com/haiwen/seafile-client/archive/v4.0.1.tar.gz"
+  sha1 "2bbdb2cdb5bcb6bcbbbf1c2ed578cc68d4aaf739"
+  version "4.0.1"
 
   head "https://github.com/haiwen/seafile-client.git"
 
@@ -29,7 +28,7 @@ class SeafileClient < Formula
 
     cmake_args = std_cmake_args
     if build.with? "xcode"
-      cmake_args << "-DCMAKE_CXX_FLAGS="-DXCODE_APP""
+      cmake_args << "-DCMAKE_CXX_FLAGS=\"-DXCODE_APP\""
     end
     system "cmake", ".", *cmake_args
     system "make"
