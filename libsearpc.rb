@@ -4,7 +4,7 @@ class Libsearpc < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz"
   version "4.0.1"
-  sha256 "35d9d908129bc06e4a3d62c0374c29e375b6c6f522dbd1b796e2f241413bb404"
+  sha256 "56313771e0ad7dc075c4590b6a75daeb3939937b21716d82c91be2612133b8cd"
 
   head "https://github.com/haiwen/libsearpc.git"
 
