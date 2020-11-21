@@ -3,27 +3,27 @@ require "formula"
 class Seafile < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/seafile/archive/v4.0.1.tar.gz"
-  sha1 "a038995c1c6c06c56a2e7208dab3bf3ce0e31725"
+  sha256 "99356768e5edd2a81d27e171f2d16cca068e170bf97c2477e6991e60254dddbb"
   version "4.0.1"
 
   head "https://github.com/haiwen/seafile.git"
 
   #[FIX] fix openssl build
   patch :p1 do
-    url "https://github.com/Chilledheart/seafile/commit/79fc942d.diff"
-    sha1 "a4c81dbf6e131502b2c229b9cab2f324e8c51e5d"
+    url "https://github.com/haiwen/seafile/commit/79fc942d.diff"
+    sha256 "58a174473668972bb2a56dde434aa9a70c1c37c122b469a2a1ba9f0efbddeeec"
   end
 
   #[FIX] homebrew autotools path
   patch :p1 do
-    url "https://github.com/Chilledheart/seafile/commit/5848eb75.diff"
-    sha1 "b8b0d17ae03474e996ce7e2a42aefe0edb80d159"
+    url "https://github.com/haiwen/seafile/commit/5848eb75.diff"
+    sha256 "98d15cc9bd2c402a4017252adce95e4b55ef10d0006fea6e50c0f40cb1dbc31d"
   end
 
   #[FIX] use system zlib
   patch :p1 do
-    url "https://github.com/Chilledheart/seafile/commit/239c148b.diff"
-    sha1 "da429338d1726b95e26b70f7a9ce1bfa3a7392ae"
+    url "https://github.com/haiwen/seafile/commit/239c148b.diff"
+    sha256 "ff0e5912be540d4c68e4edf2b50979e45898beb1eb1fe5ed1134b6b675e77447"
   end
 
   depends_on MinimumMacOSRequirement => :lion
