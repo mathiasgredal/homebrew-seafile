@@ -26,7 +26,7 @@ class Seafile < Formula
     sha256 "ff0e5912be540d4c68e4edf2b50979e45898beb1eb1fe5ed1134b6b675e77447"
   end
 
-  depends_on MinimumMacOSRequirement => :lion
+  #depends_on MinimumMacOSRequirement => :lion
 
   option "with-brewed-sqlite", "Build with Homebrew sqlite3"
 
