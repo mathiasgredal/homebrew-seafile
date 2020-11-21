@@ -4,20 +4,20 @@ class Ccnet < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/ccnet/archive/v4.0.1.tar.gz"
   version "4.0.1"
-  sha1 "bd845ff3b0c1005cd60f524e99dd7b083bcb35fa"
+  sha256 "2c8f353793e8b92c1425888016ca6a6c6e027ec31ef8a66404cb0501c24525e8"
 
   head "https://github.com/haiwen/ccnet.git"
 
   #[FIX] homebrew autotools path
   patch :p1 do
-    url "https://github.com/Chilledheart/ccnet/commit/48610f08.diff"
-    sha1 "af5a53ffb9fca0d4918b9d2ef1afd54959ecf186"
+    url "https://github.com/haiwen/ccnet/commit/48610f08.diff"
+    sha256 "69533104a977346469299dc9224e71c041a48b8783400bbec8a016b819619361"
   end
 
   #[FIX] openssl build
   patch :p1 do
-    url "https://github.com/Chilledheart/ccnet/commit/4bede362.diff"
-    sha1 "e6c540344dfa4d4650cf3e370f2421d897319ab6"
+    url "https://github.com/haiwen/ccnet/commit/4bede362.diff"
+    sha256 "dedb1d6f700050680710d6d47cf9b9e4b708b35e0e053167f5b39c89f6ac9adc"
   end
 
   option "with-brewed-sqlite", "Build with Homebrew sqlite3"
