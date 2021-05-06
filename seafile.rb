@@ -3,7 +3,7 @@ require "formula"
 class Seafile < Formula
   homepage "http://www.seafile.com/"
   url "https://github.com/haiwen/seafile/archive/v4.0.1.tar.gz"
-  sha256 "99356768e5edd2a81d27e171f2d16cca068e170bf97c2477e6991e60254dddbb"
+  sha256 "e7a275d2350c2a5f9ab48b7ebbccabf91275bbc02aa7bca60dfd3b8cf3e5706e"
   version "4.0.1"
 
   head "https://github.com/haiwen/seafile.git"
