@@ -33,7 +33,7 @@ class Ccnet < Formula
   depends_on "libevent"
   depends_on "openssl"
   depends_on "sqlite" if build.with? "brewed-sqlite"
-  depends_on "SimonGr3dal/libsearpc"
+  depends_on "libsearpc"
 
   def install
     args = %W[
