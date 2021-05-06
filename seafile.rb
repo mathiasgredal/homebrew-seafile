@@ -48,8 +48,8 @@ class Seafile < Formula
     depends_on "curl"
   end
 
-  depends_on "SimonGr3dal/libsearpc"
-  depends_on "SimonGr3dal/ccnet"
+  depends_on "libsearpc"
+  depends_on "ccnet"
 
   def install
     args = %W[
